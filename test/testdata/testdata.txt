@@ -1,53 +1,16 @@
-=====================================
- MSGID_51388022183
- From: テスト はじめ (37-49168-PC)
-  at Thu Dec 26 10:42:51 2013 (Blowfish/CBC/PKCS5Padding)(封)
-  (添付) TortoiseSVN 1.7.x
--------------------------------------
-一つめのメッセージです。
-
-
-=====================================
- MSGID_51388022201
- To: テスト次郎 (SP-057-PC)
- To: テスト はじめ (37-49168-PC)
-  at Thu Dec 26 10:43:05 2013 (多)(Blowfish/CBC/PKCS5Padding)(封)
--------------------------------------
-二つめのメッセージです。
-二つめのメッセージです。
-
-
-
-=====================================
- MSGID_51388022304
- From: テスト はじめ (37-49168-PC)
-  at Thu Dec 26 10:44:43 2013 (Blowfish/CBC/PKCS5Padding)(封)
--------------------------------------
-三つめのメッセージです。
-三つめのメッセージです。
-三つめのメッセージです。
-
-http://127.0.0.1:8080/
-
-=====================================
- MSGID_51388022305
- From: テスト次郎 (SP-057-PC)
-  at Thu Dec 27 10:44:43 2013 (Blowfish/CBC/PKCS5Padding)(封)
--------------------------------------
-四つめのメッセージです。
-四つめのメッセージです。
-四つめのメッセージです。
-四つめのメッセージです。
-
-=====================================
- MSGID_51388022206
- To: テスト はじめ (37-49168-PC)
- To: テスト次郎 (SP-057-PC)
- To: 試験 みつお (ST-PC)
-  at Thu Dec 8 10:43:05 2013 (多)(Blowfish/CBC/PKCS5Padding)(封)
--------------------------------------
-五つめのメッセージです。
-五つめのメッセージです。
-五つめのメッセージです。
-五つめのメッセージです。
-五つめのメッセージです。
+ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890
+2014/12/15 12:40:43.354, DEBUG, java.sql.Connection, "{conn-100001} Connection"
+2014/12/15 12:40:43.370, DEBUG, java.sql.Connection, "{conn-100001} Preparing Statement:      SELECT id , name FROM users WHERE id IN ( ?, ?, ?, ?)"
+2014/12/15 12:40:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100004} Executing Statement:      SELECT id , name FROM users WHERE id IN ( ?, ?, ?, ?)"
+2014/12/15 12:40:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100001} Parameters: [001, 002, 003, 004]"
+2014/12/15 12:40:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100001} Types: [java.lang.String, java.lang.String, java.lang.String, java.lang.String]"
+2014/12/15 12:40:43.401, DEBUG, java.sql.ResultSet, "{rset-100001} ResultSet"
+ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890
+ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890
+2014/12/15 12:41:43.354, DEBUG, java.sql.Connection, "{conn-100001} Connection"
+2014/12/15 12:41:43.370, DEBUG, java.sql.Connection, "{conn-100001} Preparing Statement:      SELECT id , name, salary    FROM   employee emp INNER     JOIN users usr ON emp.id = ?"
+2014/12/15 12:40:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100004} Executing Statement:      SELECT id , name, salary    FROM   employee emp INNER     JOIN users usr ON emp.id = ?"
+2014/12/15 12:41:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100001} Parameters: [001]"
+2014/12/15 12:41:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100001} Types: [java.lang.String, java.lang.String, java.lang.String, java.lang.String]"
+2014/12/15 12:41:43.401, DEBUG, java.sql.ResultSet, "{rset-100001} ResultSet"
+ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890

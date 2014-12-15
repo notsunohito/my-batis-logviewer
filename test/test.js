@@ -1,2 +1,2 @@
-require("./module/logparser_test.js");
+require("./module/queryextractor_test.js");
 
