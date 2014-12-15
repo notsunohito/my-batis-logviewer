@@ -1,0 +1,31 @@
+{
+  "name": "my-batis-logviewer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notsunohito/my-batis-logviewer.git"
+  },
+  "author": "Shuichiro Kamiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notsunohito/my-batis-logviewer/issues"
+  },
+  "homepage": "https://github.com/notsunohito/my-batis-logviewer",
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "webpack": "^1.4.13"
+  },
+  "dependencies": {
+    "backbone": "^1.1.2",
+    "css-loader": "^0.9.0",
+    "normalize-css": "^2.3.1",
+    "style-loader": "^0.8.2",
+    "underscore": "^1.7.0"
+  }
+}

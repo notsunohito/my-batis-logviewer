@@ -1,0 +1,179 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ExtractQuery Ver1.0</title>
+    <HTA:
+        APPLICATIONNAME="ExtractQuery"
+        APPLICATION INNERBORDER="no"
+        SCROLL="no"
+        SINGLEINSTANCE="yes" />
+</head>
+<style>
+BODY
+{
+    background-color: buttonface;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+}
+
+p
+{
+    margin: 5px 0 5px 15px;
+    font-size: 12px;
+}
+
+textarea
+{
+    width: 100%;
+    margin: 0 15px;
+    backgroun-color: #ffffff;
+    overflow: scroll;
+}
+
+.button
+{
+    margin: -8px 13px -5px 0;
+    float: right;
+}
+
+#loginput {
+    height: 220px;
+}
+
+#selectQuery {
+    height: 50%;
+    margin-top: 10px;
+}
+
+</style>
+<script language"javascript">
+
+function delete1() {
+    document.getElementById("loginput").value = "";
+    document.getElementById("selectQuery").value = "";
+}
+
+function run() {
+    var input = document.getElementById("loginput").value;
+    var ele_output = document.getElementById("selectQuery");
+
+    input = extract_query( input );
+
+    ele_output.value = input;
+}
+
+function run_all() {
+    var input = document.getElementById("loginput").value;
+    var ele_output = document.getElementById("selectQuery");
+
+    input = extract_query( input, 'all' );
+
+    ele_output.value = input;
+}
+
+/** 主要なクエリ情報のみ抽出処理 */
+function extract_query( input, mode ) {
+
+    var result = [];
+    var regexPreparing = /^.*(Preparing:.*)$/;
+    var regexParameters = /^.*(Parameters:.*)$/;
+    var regexColsRow = /^.*((?:Columns:|Row:).*)$/;
+
+    var query = "";
+    var param = "";
+    var inputarray = input.split(/\r\n|\r|\n/);
+    var m = [];
+
+    for(var i=0; i<inputarray.length; i++) {
+
+        // メソッド名・クラス名抽出
+        if( m = regexPreparing.exec( inputarray[i] ) ) {
+            // メソッド名ごとに改行
+            if( result.length > 1 ) result.push('');
+
+            // キャプチャグループ格納用
+            var n = [];
+            if ( n = /(\[class:[^]]*\]) (\[method:[^]]*]) START.*$/.exec( inputarray[i-1] )) {
+                result.push( n[2] + " " + n[1] );
+            }
+
+            result.push( "    " + m[1] );
+        }
+
+        if( m = regexParameters.exec( inputarray[i] ) ) {
+            result.push( "    "  + m[1] );
+        }
+        
+        if( mode === 'all') {
+            if(  m = regexColsRow.exec( inputarray[i] ) ) result.push( "    "  + m[1] );
+        }
+
+    }
+    // 「Query：」の追加
+    result = injectquery( result );
+    return result.join('\n');
+}
+
+/** 「Query：」文挿入処理 */
+function injectquery( array ) {
+    var result = [];
+    var regexPreparing = /^.*Preparing:(.*)$/;
+    var regexParameters = /^.*Parameters: (.*)$/;
+    var m = [];
+    var n = [];
+
+    for(var i=0; i<array.length; i++) {
+        if( m = regexPreparing.exec( array[i] )  ) {
+            if( n = regexParameters.exec( array[i+1] ) ) {
+                var param = extract_param( n[1] );
+                result.push( "  Query:" + apply_param( m[1], param ) );
+            }
+        }
+        result.push( array[i] );
+    }
+    return result;
+}
+
+/** Preparing、Parametersの合成処理 */
+function apply_param( text ,param) {
+    if( param ) {
+      for(var i=0; i<param.length; i++) {
+          text = text.replace( '?', "\'"+ param[i] + '\'' );
+      }
+    }
+    return text;
+}
+
+/** Parametersからパラメータを取得する処理 */
+function extract_param( param ) {
+    // 先頭の不必要な文字列を削除
+    param = param.replace(/^ *Parameters: |\([^)]+\)/g,'');
+    param = param.split(/, |,/);
+    return param;
+}
+
+function init() {
+    // 初期WindowSize
+    window.resizeTo(1200,640);
+}
+</script>
+
+<body onload="init()">
+
+    <p>ログ:</p>
+
+    <textarea id="loginput" rows="15" wrap="off"></textarea>
+    <br />
+    
+    <input type="button" class="button" id="deletebutton" value="&nbsp;AllDelete&nbsp;" onclick="delete1()">
+    <input type="button" class="button" id="runbutton" value="&nbsp;Query&nbsp;" onclick="run()">
+    <input type="button" class="button" id="allbutton" value="&nbsp;All&nbsp;" onclick="run_all()">
+    
+    <p>抽出されたクエリ情報</p>
+
+    <textarea id="selectQuery" rows="14" wrap="off"></textarea>
+    
+</body>
+</html>

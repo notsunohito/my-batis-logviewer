@@ -1,0 +1,61 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.user {
+    backgroun-color: #fff;
+    padding: 4px;
+    border-bottom: 1px solid #d6d2d0;
+}
+
+.message {
+    /* display: none; */
+}
+
+.message-header {
+    border-bottom: 1px solid #d6d2d0;
+}
+.message-body {
+    margin-left: 16px;
+}
+
+.container {
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    margin: 2px;
+    padding: 10px;
+}
+
+html,body{
+	height:100%;
+	background-color: #f0efee;
+}
+
+#wrapper {
+    border-radius: 4px;
+    background-color: #d6d2d0;
+    width: 960px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+#header {
+    height: 4%;
+}
+#nav {
+    min-height: 120px;
+    width: 10%;
+    float: left;
+}
+#main {
+    min-height: 120px;
+    width: 85%;
+    float: left;
+}
+#footer {
+    height: 4%;
+    clear: both;
+}
