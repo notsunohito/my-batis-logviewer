@@ -20,10 +20,10 @@ describe('QueryExtractor', function(){
             var first = actual[0];
 
             it('statement //=> SELECT ...', function() {                
-                assert.strictEqual( statement,  'SELECT id , name FROM users WHERE id IN ( ?, ?, ?, ?)');
+                assert.strictEqual( first.statement,  'SELECT id , name FROM users WHERE id IN ( ?, ?, ?, ?)');
             });
             it('params //=> ["001", "002", "003", "004"]', function() {                
-                assert.strictEqual( params,["001", "002", "003", "004"]);
+                assert.strictEqual( JSON.stringify(first.params), JSON.stringify( ["001", "002", "003", "004"] ));
             });
         });
     });
