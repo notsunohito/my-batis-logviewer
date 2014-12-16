@@ -25,12 +25,19 @@ var QueryExtractor = function() {
 
     this.extract3lines = function( rawContent ) {
         var queries    = [];
+        var statement = '';
+        var params = [];
         var match;
         while (match = queryMark.exec(rawContent)) {
-            queries.push([match[1], match[2]]);
+            statement = match[1];
+            params = match[2];
+            queries.push( [ statement, params] );
         }
         return queries;
     };
+    this.createExcecuted = function() {
+        
+    }
 };
 
 module.exports = new QueryExtractor();

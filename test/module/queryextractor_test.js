@@ -15,15 +15,18 @@ describe('QueryExtractor', function(){
             assert.equal( actual.length, 2);
         });
 
-        describe('The first query contains', function(){
+        describe('The first elements contains', function(){
 
             var first = actual[0];
 
-            it('statement //=> SELECT ...', function() {                
+            it('statement //=> SELECT id , name FROM users WHERE id IN ( ?, ?, ?, ?)', function() {                
                 assert.strictEqual( first.statement,  'SELECT id , name FROM users WHERE id IN ( ?, ?, ?, ?)');
             });
             it('params //=> ["001", "002", "003", "004"]', function() {                
                 assert.strictEqual( JSON.stringify(first.params), JSON.stringify( ["001", "002", "003", "004"] ));
+            });
+            it('excecuted //=> SELECT id , name FROM users WHERE id IN ( \'001\', \'002\', \'003\', \'004\')', function() {                
+                assert.strictEqual( first.excecuted, 'SELECT id , name FROM users WHERE id IN ( \'001\', \'002\', \'003\', \'004\')' );
             });
         });
     });
