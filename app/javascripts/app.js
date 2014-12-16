@@ -1,16 +1,24 @@
 var _ = require('underscore');
+var $ = require('jquery');
 var QueryExtractor = require('./module/log/queryextractor.js');
+var Query    = require('./query/query.js');
+var Queries  = require('./query/queries.js');
+var QueriesView = require('./query/queriesview.js');
 
 var Application = {
     initialize: function() {
-        $('#file-input').on('change', this.display);
+        $('#input').on('change', this.display);
     },
-    display: function( text ) {
+    display: function() {
+        var text = $('#input')[0].value;
+        if(!text) return;
         var queries = QueryExtractor.extract( text  );
         Application.render( queries );
     },
-    render: function(messageArr) {
-
+    render: function(qArr) {
+        var models = _.map(qArr, function(query) { return new Query(query); });
+        var queries = new Queries( models );
+        var queriesView = new QueriesView({collection: queries });
         $('#main').html( queriesView.render().el );
     }
 };

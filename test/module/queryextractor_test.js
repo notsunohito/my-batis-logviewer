@@ -25,8 +25,8 @@ describe('QueryExtractor', function(){
             it('params //=> ["001", "002", "003", "004"]', function() {                
                 assert.strictEqual( JSON.stringify(first.params), JSON.stringify( ["001", "002", "003", "004"] ));
             });
-            it('excecuted //=> SELECT id , name FROM users WHERE id IN ( \'001\', \'002\', \'003\', \'004\')', function() {                
-                assert.strictEqual( first.excecuted, 'SELECT id , name FROM users WHERE id IN ( \'001\', \'002\', \'003\', \'004\')' );
+            it('executed //=> SELECT id , name FROM users WHERE id IN ( \'001\', \'002\', \'003\', \'004\')', function() {                
+                assert.strictEqual( first.executed, 'SELECT id , name FROM users WHERE id IN ( \'001\', \'002\', \'003\', \'004\')' );
             });
         });
     });

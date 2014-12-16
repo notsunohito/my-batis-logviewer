@@ -30,18 +30,18 @@ var QueryExtractor = function() {
     this.createQuery = function( extract ) {
         var statement = extract[0].replace(/ +/g,' '),
             params = extract[1].split(', '),
-            excecuted = self.embedParams( statement, params);
+            executed = self.embedParams( statement, params);
         return { statement: statement,
                  params: params,
-                 excecuted: excecuted};
+                 executed: executed};
     };
 
     this.embedParams = function( statement, params) {
         var embedded = statement,
-            quoted = '';
+            quotedParam = '';
         _.each( params, function( param ) {
-            quoted = "'" + param + "'";
-            embedded = embedded.replace( '?', quoted);
+            quotedParam = "'" + param + "'";
+            embedded = embedded.replace( '?', quotedParam);
         });
         return embedded;
     };
