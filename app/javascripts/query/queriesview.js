@@ -5,14 +5,22 @@ var Query    = require('./query.js');
 var Queries  = require('./queries.js');
 
 var QueryTemplate = _.template(
-        //'<td class="qid">' +
-        //    '<%= qid %>' +
-        //'</td>' +
-        '<td class="executed">' +
+    '<tr>' +
+        '<td>+</td>' +
+        '<td class="executed" class=\'sql\' style="white-space: nowrap;">' +
+          //'<pre><code class=\'sql\' style="white-space: nowrap;">' +
+            '<%= executed %>' +
+          //'</pre></code>' +
+        '</td>' +
+    '</tr>' +
+    '<tr hidden>' +
+        '<td></td>' +
+        '<td class="formatted">' +
             '<pre><code class=\'sql\'>' +
-                '<%= executed %>' +
+                '<%= formatted %>' +
             '</pre></code>' +
-        '</td>');
+        '</td>' +
+    '</tr>');
 
 var QueryView = Backbone.View.extend({
     tagName: 'tr',

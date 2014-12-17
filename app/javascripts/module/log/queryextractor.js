@@ -1,5 +1,10 @@
 var _ = require('underscore');
 var hl = require("highlight.js");
+var asf = require("../../lib/anbt-sql-formatter.js");
+var rule = new asf.anbtSqlFormatter.Rule();
+    rule.indentString = " ";
+    rule.space_after_comma = true;
+var Formatter = new asf.anbtSqlFormatter.Formatter(rule);
 
 
 var QueryExtractor = function() {
@@ -34,7 +39,8 @@ var QueryExtractor = function() {
             executed = self.embedParams( statement, params);
         return { statement: statement,
                  params: params,
-                 executed: hl.highlight('sql', executed).value };
+                 executed: hl.highlight('sql', executed).value, 
+                 formatted: hl.highlight('sql', Formatter.format(executed) ).value};
     };
 
     this.embedParams = function( statement, params) {
