@@ -7,10 +7,10 @@ var QueriesView = require('./query/queriesview.js');
 
 var Application = {
     initialize: function() {
-        $('#input').on('change', this.display);
+        $('#loginput').on('change', this.display);
     },
     display: function() {
-        var text = $('#input')[0].value;
+        var text = $('#loginput')[0].value;
         if(!text) return;
         var queries = QueryExtractor.extract( text  );
         Application.render( queries );

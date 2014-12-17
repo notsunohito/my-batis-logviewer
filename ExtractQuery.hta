@@ -9,61 +9,21 @@
         SCROLL="no"
         SINGLEINSTANCE="yes" />
 </head>
-<style>
-BODY
-{
-    background-color: buttonface;
-    font-family: Consolas, "Liberation Mono", Courier, monospace;
-    font-size: 12pt;
-    margin: 0;
-    padding: 0;
-}
-
-p
-{
-    margin: 5px 0 5px 15px;
-    font-size: 12px;
-}
-
-textarea
-{
-    width: 100%;
-    margin: 0 15px;
-    backgroun-color: #ffffff;
-    overflow: scroll;
-}
-
-.button
-{
-    margin: -8px 13px -5px 0;
-    float: right;
-}
-
-#loginput {
-    height: 220px;
-}
-
-#selectQuery {
-    height: 50%;
-    margin-top: 10px;
-}
-</style>
 <body>
 
-    <p>ログ:</p>
+  <div id="wrapper">
+    <div class="container" id="header">
+      <textarea id="loginput" rows="15" wrap="off"></textarea>
+    </div>
 
-    <textarea id="loginput" rows="15" wrap="off"></textarea>
-    <br />
-    
-    <input type="button" class="button" id="deletebutton" value="&nbsp;AllDelete&nbsp;">
-    <input type="button" class="button" id="runbutton" value="&nbsp;Query&nbsp;">
-    
-    <p>抽出されたクエリ情報</p>
+    <div class="container" id="main">
+      <div id="selectQuery" rows="14" wrap="off"></div>
+    </div>
 
-    <div id="selectQuery" rows="14" wrap="off"></div>
     <script src="bundle.js"></script>
     <script>
       window.resizeTo(1200,640);
     </script>
+  </div> <!-- #wrapper -->
 </body>
 </html>

@@ -9,7 +9,9 @@ var QueryTemplate = _.template(
         //    '<%= qid %>' +
         //'</td>' +
         '<td class="executed">' +
-            '<%= executed %>' +
+            '<pre><code class=\'sql\'>' +
+                '<%= executed %>' +
+            '</pre></code>' +
         '</td>');
 
 var QueryView = Backbone.View.extend({

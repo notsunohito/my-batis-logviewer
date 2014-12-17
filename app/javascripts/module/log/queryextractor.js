@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var hl = require("highlight.js");
 
 
 var QueryExtractor = function() {
@@ -33,7 +34,7 @@ var QueryExtractor = function() {
             executed = self.embedParams( statement, params);
         return { statement: statement,
                  params: params,
-                 executed: executed};
+                 executed: hl.highlight('sql', executed).value };
     };
 
     this.embedParams = function( statement, params) {
