@@ -13,8 +13,22 @@ html,body{
 	background-color: #f0efee;
 }
 
-td {
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
     background-color: 1px solid #f0efee;
+}
+
+div.executed {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    height: 24px;
 }
 
 #loginput {
@@ -38,7 +52,6 @@ td {
 #main {
     min-height: 120px;
     width: 98%;
-    overflow: hidden;
 }
 #footer {
     height: 4%;

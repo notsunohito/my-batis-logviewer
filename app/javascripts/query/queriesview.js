@@ -5,25 +5,19 @@ var Query    = require('./query.js');
 var Queries  = require('./queries.js');
 
 var QueryTemplate = _.template(
-    '<tr>' +
-        '<td></td>' +
-        '<td class="executed" class=\'sql\' style="white-space: nowrap;">' +
-          //'<pre><code class=\'sql\' style="white-space: nowrap;">' +
-            '<%= executed %>' +
-          //'</pre></code>' +
-        '</td>' +
-    '</tr>' +
-    '<tr hidden>' +
-        '<td></td>' +
-        '<td class="formatted">' +
-            '<pre><code class=\'sql\'>' +
-                '<%= formatted %>' +
-            '</code></pre>' +
-        '</td>' +
-    '</tr>');
+      '<div class="executed" class=\'sql\'>' +
+        '<%= formatted %>' +
+      '</div>' +
+      '<div  class="formatted" hidden>' +
+        '<pre>'+
+          '<code class=\'sql\'>' +
+            '<%= formatted %>' +
+          '</code>' + 
+        '</pre>' +
+      '</div>');
 
 var QueryView = Backbone.View.extend({
-    tagName: 'tr',
+    tagName: 'li',
     className: 'query',
     template: QueryTemplate,
     render: function() {
@@ -34,7 +28,7 @@ var QueryView = Backbone.View.extend({
 });
 
 var QueriesView = Backbone.View.extend({
-    tagName: 'table',
+    tagName: 'ul',
     id: 'queries',
     render: function() {
         this.collection.each(function(query) {

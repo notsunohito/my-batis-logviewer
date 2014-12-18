@@ -35,7 +35,8 @@ var QueryExtractor = function() {
             executed = self.embedParams( statement, params);
         return { statement: statement,
                  params: params,
-                 executed: hl.highlight('sql', executed).value, 
+                 highlighted: hl.highlight('sql', executed).value,
+                 executed: executed, 
                  formatted: hl.highlight('sql', Formatter.format(executed) ).value};
     };
 
