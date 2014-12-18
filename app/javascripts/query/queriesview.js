@@ -6,7 +6,7 @@ var Queries  = require('./queries.js');
 
 var QueryTemplate = _.template(
     '<tr>' +
-        '<td>+</td>' +
+        '<td></td>' +
         '<td class="executed" class=\'sql\' style="white-space: nowrap;">' +
           //'<pre><code class=\'sql\' style="white-space: nowrap;">' +
             '<%= executed %>' +
@@ -18,7 +18,7 @@ var QueryTemplate = _.template(
         '<td class="formatted">' +
             '<pre><code class=\'sql\'>' +
                 '<%= formatted %>' +
-            '</pre></code>' +
+            '</code></pre>' +
         '</td>' +
     '</tr>');
 

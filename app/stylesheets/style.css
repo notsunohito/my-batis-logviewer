@@ -38,6 +38,7 @@ td {
 #main {
     min-height: 120px;
     width: 98%;
+    overflow: hidden;
 }
 #footer {
     height: 4%;
