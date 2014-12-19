@@ -1,8 +1,7 @@
 var _ = require('underscore');
 var $ = require('jquery');
+var Backbone = require('backbone');
 var QueryExtractor = require('./module/log/queryextractor.js');
-var Query    = require('./query/query.js');
-var Queries  = require('./query/queries.js');
 var QueriesView = require('./query/queriesview.js');
 
 var Application = {
@@ -16,8 +15,8 @@ var Application = {
         Application.render( queries );
     },
     render: function(qArr) {
-        var models = _.map(qArr, function(query) { return new Query(query); });
-        var queries = new Queries( models );
+        var models = _.map(qArr, function(query) { return new Backbone.Model( query ); });
+        var queries = new Backbone.Collection( models );
         var queriesView = new QueriesView({collection: queries });
         $('#main').html( queriesView.render().el );
     }
