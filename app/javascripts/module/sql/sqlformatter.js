@@ -39,6 +39,7 @@ var SqlFormatter = function() {
             result.push(notMatched);
             result.push(match[0]);
         }
+        result.push( anbtFormatted.substring( prevMatchedTailIndex + matchedLength, anbtFormatted.length) );
         return result;
     }
 
