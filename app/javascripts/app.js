@@ -6,7 +6,7 @@ var QueriesView = require('./query/queriesview.js');
 
 var Application = {
     initialize: function() {
-        $('#loginput').on('change', this.display);
+        $('#loginput').on('input', this.display);
     },
     display: function() {
         var text = $('#loginput')[0].value;
