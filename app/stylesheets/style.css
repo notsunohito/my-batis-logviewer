@@ -32,7 +32,23 @@ pre {
     font-size: 12px;
 }
 
-div.executed {
+.query {
+    padding-left: 20px;
+}
+
+button.toggle-tree {
+    position: absolute;
+    margin-left: -24px;
+    background-color: #f0efee;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    border-style: none;
+    font-weight: bold;
+}
+
+div.unformatted {
+    margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
