@@ -1,10 +1,12 @@
 require('normalize-css');
-// require('./app/stylesheets/lib/tomorrow-night.css');
-// require('./app/stylesheets/lib/atelier-seaside.light.css');
-// require('./app/stylesheets/lib/atelier-lakeside.light.css');
-// require('./app/stylesheets/lib/googlecode.css');
-require('./app/stylesheets/lib/tomorrow.css');
 
+require('./app/font/octicons.css');
+require('./app/font/octicons.eot');
+require('./app/font/octicons.svg');
+require('./app/font/octicons.ttf');
+require('./app/font/octicons.woff');
+
+require('./app/stylesheets/lib/tomorrow.css');
 require('./app/stylesheets/style.css');
 
 (function() {
