@@ -1,10 +1,10 @@
-必要なもの
+#必要なもの
 
 [node.js](http://nodejs.org)
 
 `$ npm install`
 
-Build
+#Build
 
 `$ webpack`
 
@@ -12,7 +12,7 @@ or
 
 `$ node node_modules/webpack/bin/webpack.js`
 
-Test
+#Test
 
 `$ mocha`
 
