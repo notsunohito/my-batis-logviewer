@@ -1,10 +1,12 @@
-#必要なもの
+###必要なもの
 
 [node.js](http://nodejs.org)
 
+####依存するパッケージの取得
+
 `$ npm install`
 
-#Build
+####Build
 
 `$ webpack`
 
@@ -12,7 +14,7 @@ or
 
 `$ node node_modules/webpack/bin/webpack.js`
 
-#Test
+####Test
 
 `$ mocha`
 
