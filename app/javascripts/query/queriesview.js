@@ -54,20 +54,20 @@ var QueryView = Backbone.View.extend({
 
     format: function() {
         if( this.$el.children('.formatted')[0] ) {
-            this.$el.children('.formatted')[0].hidden = false;
-            this.$el.children('.unformatted')[0].hidden = true;
+            this.$el.children('.formatted').show();
+            this.$el.children('.unformatted').hide();
             return;
         }
         var executed = this.$el.children('.hidden')[0].innerText;
         var formatted = hl.highlight('sql', Formatter.format( executed ) ).value;
-        this.$el.children('.unformatted')[0].hidden = true;
+        this.$el.children('.unformatted').hide();
         var textnode = PreTemplate({ formatted: formatted });
         this.$el.append(textnode);    
     },
 
     unformat: function() {
-        this.$el.children('.formatted')[0].hidden = true;
-        this.$el.children('.unformatted')[0].hidden = false;
+        this.$el.children('.formatted').hide();
+        this.$el.children('.unformatted').show();
     },
 
     addDisplayProperties: function( query ) {
