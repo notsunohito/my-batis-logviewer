@@ -2,7 +2,7 @@ var _ = require('underscore');
 
 var QueryExtractor = function() {
     var self = this,
-        queryMark = new RegExp(/(?:Executing Statement: +(.+?)"(?:\r\n?|\n)).*Parameters: +\[([^\]]+)\]"/g);
+        queryMark = new RegExp(/(?:Executing Statement: +(.+?)"(?:\r\n?|\n)).*?Parameters: +\[([^\]]+)\]"/g);
     
     this.extract = function( rawContent ) {
         var queries = [],
