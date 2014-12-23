@@ -1,0 +1,16 @@
+ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890
+2014/12/15 12:40:43.354, DEBUG, java.sql.Connection, "{conn-100001} Connection"
+2014/12/15 12:40:43.370, DEBUG, java.sql.Connection, "{conn-100001} Preparing Statement:      SELECT id ,                name FROM            users WHERE           id IN         ( ?, ?, ?, ?) AND name IN ( ?, ?)"
+2014/12/15 12:40:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100004} Executing Statement:      SELECT id ,                name FROM            users WHERE           id IN         ( ?, ?, ?, ?) AND name IN ( ?, ?)"
+2014/12/15 12:40:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100001} Parameters: [001, 002, 003, 004, notsu, nohito]"
+2014/12/15 12:40:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100001} Types: [java.lang.String, java.lang.String, java.lang.String, java.lang.String]"
+2014/12/15 12:40:43.401, DEBUG, java.sql.ResultSet, "{rset-100001} ResultSet"
+ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890
+ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890
+2014/12/15 12:41:43.354, DEBUG, java.sql.Connection, "{conn-100001} Connection"
+2014/12/15 12:41:43.370, DEBUG, java.sql.Connection, "{conn-100001} Preparing Statement:      SELECT id , name, salary    FROM   employee emp INNER     JOIN users usr ON emp.id = ?"
+2014/12/15 12:40:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100004} Executing Statement:      SELECT id , name, salary    FROM   employee emp INNER     JOIN users usr ON emp.id = ?"
+2014/12/15 12:41:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100001} Parameters: [001]"
+2014/12/15 12:41:43.370, DEBUG, java.sql.PreparedStatement, "{pstm-100001} Types: [java.lang.String, java.lang.String, java.lang.String, java.lang.String]"
+2014/12/15 12:41:43.401, DEBUG, java.sql.ResultSet, "{rset-100001} ResultSet"
+ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890ABCDEFGHIJKELMNOPQRSTYVWXYZ1234567890
