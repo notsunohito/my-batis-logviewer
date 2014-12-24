@@ -31,9 +31,8 @@ var QueryExtractor = function() {
             params = extract[1].split(', '),
             executed = self.embedParams( statement, params);
         return { statement: statement,
-                    params: params,
-                    executed: executed
-               };
+                 params: params,
+                 executed: executed };
     };
 
     this.embedParams = function( statement, params) {

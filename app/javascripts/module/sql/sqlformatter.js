@@ -1,8 +1,8 @@
 var _ = require('underscore');
 var asf = require("../../lib/anbt-sql-formatter.js");
 var rule = new asf.anbtSqlFormatter.Rule();
-      rule.indentString = " ";
-      rule.space_after_comma = true;
+    rule.indentString = " ";
+    rule.space_after_comma = true;
 var anbtSqlFormatter = new asf.anbtSqlFormatter.Formatter(rule);
 
 var SqlFormatter = function() { 
