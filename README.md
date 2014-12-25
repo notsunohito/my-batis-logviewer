@@ -2,7 +2,7 @@
 
 [node.js](http://nodejs.org)
 
-####依存するパッケージのインストール
+####パッケージのインストール
 
 `$ npm install`
 
