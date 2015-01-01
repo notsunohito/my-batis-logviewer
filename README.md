@@ -8,16 +8,8 @@
 
 ####Build
 
-`$ webpack`
-
-or
-
-`$ node node_modules/webpack/bin/webpack.js`
+`$ npm run-script build`
 
 ####Test
 
-`$ mocha`
-
-or
-
-`$ node node_modules/mocha/bin/mocha`
+`$ npm test`
