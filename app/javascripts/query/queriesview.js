@@ -84,9 +84,9 @@ var QueriesView = Backbone.View.extend({
         var self = this;
         this.collection.each(function(query) {
             var queryView = new QueryView({ model: query });
-            setTimeout((function() {
+            setTimeout(function() {
                 self.$el.append(queryView.render().el);
-            })());
+            }, 0);
         }, this);
         return this;
     }
