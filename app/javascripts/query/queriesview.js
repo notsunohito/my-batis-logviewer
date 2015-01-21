@@ -28,7 +28,7 @@ var QueryView = Backbone.View.extend({
     tagName: 'li',
     className: 'query',
     template: QueryTemplate,
-    isFormatted: false,
+    formatted: false,
     render: function() {
         var displayQuery = this.addDisplayProperties( this.model );
         var template = this.template( displayQuery.toJSON() );
@@ -41,13 +41,13 @@ var QueryView = Backbone.View.extend({
     },
 
     toggleFormat:  function() {  
-        if(this.isFormatted) {
+        if(this.formatted) {
             this.unformat();
-            this.isFormatted = false;
+            this.formatted = false;
             this.$el.children('button')[0].innerText = '+';
         } else {
             this.format();
-            this.isFormatted = true;
+            this.formatted = true;
             this.$el.children('button')[0].innerText = '-';
         }
     },
