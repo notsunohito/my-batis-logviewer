@@ -1,13 +1,15 @@
 ###必要なもの
 
-[The Haskell Platform](https://www.haskell.org/platform/)
+[node.js](http://nodejs.org)
 
-###起動まで
+####パッケージのインストール
 
-$ `cabal sandbox init`
+`$ npm install`
 
-$ `cabal install`
+####Build
 
-$ `.cabal-sandbox/bin/todo`
+`$ npm run-script build`
 
-####Go to `http://localhost:3000`
+####Test
+
+`$ npm test`
