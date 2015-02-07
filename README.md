@@ -6,10 +6,8 @@
 
 $ `cabal sandbox init`
 
-`$ cabal install`
+$ `cabal install`
 
-`$ .cabal-sandbox/bin/todo`
+$ `.cabal-sandbox/bin/todo`
 
-####Go to 
-
-` http://localhost:3000`
+####Go to `http://localhost:3000`
