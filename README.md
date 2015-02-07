@@ -4,7 +4,7 @@
 
 ###起動まで
 
-`$ cabal sandbox init`
+$ `cabal sandbox init`
 
 `$ cabal install`
 
