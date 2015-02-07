@@ -2,6 +2,8 @@
 
 [The Haskell Platform](https://www.haskell.org/platform/)
 
+###起動まで
+
 `$ cabal sandbox init`
 
 `$ cabal install`
